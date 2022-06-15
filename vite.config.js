@@ -1,8 +1,9 @@
 /* eslint-disable */
 import legacyPlugin from '@vitejs/plugin-legacy';
 import usePluginImport from 'vite-plugin-importer';
-import * as path from 'path';
 import reactRefresh from '@vitejs/plugin-react-refresh';
+import vitePluginImp from 'vite-plugin-imp'
+
 // @see https://cn.vitejs.dev/config/
 export default ({
   command,
@@ -50,11 +51,16 @@ export default ({
     plugins: [
       legacyPlugin({
         targets: ['Android > 39', 'Chrome >= 60', 'Safari >= 10.1', 'iOS >= 10.3', 'Firefox >= 54', 'Edge >= 15'],
-      }), usePluginImport({
-        libraryName: " ", // todo please input your babel-plugin-import config
-        libraryDirectory: " ",
-        style: "css",
-      }), reactRefresh(),
+      }),
+      reactRefresh(),
+      vitePluginImp({
+        libList: [
+          {
+            libName: "antd",
+            style: (name) => `antd/lib/${name}/style/index.css`,
+          },
+        ],
+      })
     ],
     css: {
       preprocessorOptions: {

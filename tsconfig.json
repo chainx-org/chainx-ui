@@ -1,14 +1,23 @@
 {
-	"compilerOptions": {
-		"outDir": "./dist/",
-		"sourceMap": true,
-		"noImplicitAny": true,
-		"module": "es6",
-		"target": "esnext",
-		"jsx": "react",
-		"allowJs": true,
-		"moduleResolution": "node",
-		"allowSyntheticDefaultImports": true,
-		"resolveJsonModule": true
-	}
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "esnext",
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components": [
+        "src/components"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ]
+    }
+  }
 }

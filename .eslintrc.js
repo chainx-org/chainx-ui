@@ -27,7 +27,7 @@ module.exports = {
     "no-const-assign": 2,//禁止修改const声明的变量
     "no-debugger": 2,//禁止使用debugger
     "no-else-return": 2,//如果if语句里面有return,后面不能跟else语句
+  },
 
-  }
 }
 

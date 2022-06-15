@@ -6,6 +6,7 @@ route: /button
 
 import { Playground, Props } from 'docz'
 import { Button } from './index.tsx'
+import { Text } from 'rebass'
 
 # Button
 
@@ -19,11 +20,13 @@ import { Button } from './index.tsx'
     border={'none'}
     borderRadius={'6px'}
     margin={'0 10px 0 0'}
+    hoverBackgroundColor={'blue'}
+    hoverColor={'#eeeeee'}
   >
-    Click me
+    <Text fontSize={15} fontWeight={600}>
+      Click me
+    </Text>
   </Button>
-
-
 
   <Button
     padding={'12px 24px'}
@@ -31,6 +34,7 @@ import { Button } from './index.tsx'
     color={'white'}
     border={'none'}
     borderRadius={'6px'}
+    disabledBackgroundColor={'#cccccc'}
     disabled
   >
     disabled

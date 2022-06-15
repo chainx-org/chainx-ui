@@ -14,6 +14,7 @@ export const ButtonWrapper = styled(Button)<{
   disabledColor?: string
   disabledBackgroundColor?: string
 }>`
+  height: auto;
   border: ${({ border }) => border && border};
   background: ${({ backgroundColor }) => backgroundColor && backgroundColor};
   color: ${({ color }) => color && color};
@@ -39,7 +40,9 @@ export const ButtonWrapper = styled(Button)<{
   }
 
   &:disabled,
-  &[disabled] {
+  &[disabled],
+  &[disabled]:hover,
+  &:disabled:hover {
     cursor: not-allowed;
     border: none;
     color: ${({ disabledColor }) => (disabledColor ? disabledColor : 'white')};
