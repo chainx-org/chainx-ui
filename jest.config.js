@@ -11,8 +11,9 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss|less)$': 'identity-obj-proxy',
-    '\\.svg$': 'identity-obj-proxy',
-    '@components': '<rootDir>/src/components'
+    // '\\.svg$': 'identity-obj-proxy',
+    '@components': '<rootDir>/src/components',
+    '^.+\\.(css|style|less|sass|scss|png|jpg|ttf|woff|woff2|svg)$': 'jest-transform-stub'
   },
   transformIgnorePatterns: [
     '[/\\\\]node_modules/(?!(antd)/)[/\\\\].+\\.(js|jsx|ts|tsx)$',
