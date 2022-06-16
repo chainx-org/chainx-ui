@@ -28,7 +28,7 @@ describe('Button Component', () => {
 
   it('can set style', () => {
     render(
-      <Button padding={'24px'} margin={'14px'} color={'red'} border={'none'} borderRadius={'20px'} boxShadow={'none'}>
+      <Button padding={'24px'} margin={'14px'} color={'red'} border={'none'} $borderRadius={'20px'} $boxShadow={'none'}>
         click me
       </Button>,
     )
@@ -55,7 +55,7 @@ describe('Button Component', () => {
 
   it('can set style of disabled button', () => {
     render(
-      <Button disabledColor={'#cccccc'} disabledBackgroundColor={'green'} disabled>
+      <Button $disabledColor={'#cccccc'} $disabledBackgroundColor={'green'} disabled>
         disabled
       </Button>,
     )
