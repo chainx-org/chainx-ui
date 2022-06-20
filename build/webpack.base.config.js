@@ -10,13 +10,28 @@ const rootDir = process.cwd()
 const WebpackBar = require('webpackbar')
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: {
+    index: './lib/index.tsx', //入口是 index.tsx
+  },
+  //   {
+  //   index: {
+  //     import: path.resolve(rootDir, 'lib/index'),
+  //     filename: 'index.js',
+  //     // dependOn: ['Button', 'Icon'],
+  //   },
+    // Button: path.resolve(rootDir, 'lib/Button/index.tsx'),
+    // Icon: './lib/Icon/index.tsx'
+  // },
   devtool: 'inline-source-map',
   output: {
-    chunkFilename: '[name].[chunkhash:8].js',
-    path: path.resolve(rootDir, 'dist'),
-    filename: 'bundle.[contenthash:8].js',
-    publicPath: '/',
+    path: path.resolve(rootDir, 'dist/lib'),
+    library: 'ui_components', // 组件库名称
+    libraryTarget: 'umd',  //模块化格式
+    // filename: "index.js"
+    // filename: "index.js",
+    // clean: true,
+    // library: 'ui_components',
+    // libraryTarget: 'umd',
     clean: true,
   },
   module: {
@@ -24,26 +39,15 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         use: [
-          {
-            loader: 'thread-loader',
-            options: {},
-          },
           'babel-loader',
-          {
-            loader: 'ts-loader',
-            options: {
-              happyPackMode: true,
-              transpileOnly: true,
-            },
-          },
+          'ts-loader'
         ],
         exclude: /node_modules/,
       },
       {
         test: /\.(s[ac]ss|css)$/i,
         use: [
-          MiniCssExtractPlugin.loader,
-          'thread-loader',
+          'style-loader',
           'css-loader',
           'sass-loader',
           {
@@ -63,46 +67,47 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
+      '@': path.resolve(rootDir, 'lib')
       // crypto: false,
       // 'react/jsx-runtime': require.resolve('react/jsx-runtime')
     },
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(rootDir, 'public/index.html'),
-      inject: 'body',
-      scriptLoading: 'blocking',
-      minify: {
-        //压缩HTML文件
-        removeComments: true, //移除HTML中的注释
-        collapseWhitespace: true, //删除空白符与换行符
-      },
-      favicon: path.resolve(rootDir, 'public/favicon.svg'),
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: '*.js',
-          context: path.resolve(rootDir, 'public/js'),
-          to: path.resolve(rootDir, 'dist/js'),
-        },
-      ],
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
-    }),
-    new CssMiniWebpackPlugin(),
-    new webpack.optimize.SplitChunksPlugin(),
+    // new HtmlWebpackPlugin({
+    //   template: path.resolve(rootDir, 'public/index.html'),
+    //   inject: 'body',
+    //   scriptLoading: 'blocking',
+    //   minify: {
+    //     //压缩HTML文件
+    //     removeComments: true, //移除HTML中的注释
+    //     collapseWhitespace: true, //删除空白符与换行符
+    //   },
+    //   favicon: path.resolve(rootDir, 'public/favicon.svg'),
+    // }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: '*.js',
+    //       context: path.resolve(rootDir, 'public/js'),
+    //       to: path.resolve(rootDir, 'dist/js'),
+    //     },
+    //   ],
+    // }),
+    // new MiniCssExtractPlugin({
+    //   filename: 'components/[name]/style/index.css',
+    // }),
+    // new CssMiniWebpackPlugin(),
+    // new webpack.optimize.SplitChunksPlugin(),
     new WebpackBar(),
-    new webpack.ProvidePlugin({
-      process: 'process/browser.js',
-      Buffer: ['buffer', 'Buffer'],
-    }),
-    new webpack.DefinePlugin({
-      'process.env.API_ENV': JSON.stringify(process.env.API_ENV),
-      API_ENV: JSON.stringify(process.env.API_ENV),
-    }),
+    // new webpack.ProvidePlugin({
+    //   process: 'process/browser.js',
+    //   Buffer: ['buffer', 'Buffer'],
+    // }),
+    // new webpack.DefinePlugin({
+    //   'process.env.API_ENV': JSON.stringify(process.env.API_ENV),
+    //   API_ENV: JSON.stringify(process.env.API_ENV),
+    // }),
   ],
 }

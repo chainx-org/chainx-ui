@@ -1,22 +1,38 @@
 {
+  "include": [
+    "lib/*",
+    "lib/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "config",
+    "dist",
+    "jest",
+    "*.js",
+  ],
   "compilerOptions": {
-    "outDir": "./dist/",
+    "outDir": "dist",
     "sourceMap": true,
     "noImplicitAny": true,
-    "module": "es6",
-    "target": "esnext",
+    "module": "esnext",
+    "target": "es5",
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
+    "declaration": true,
     "baseUrl": ".",
+    "rootDir": ".",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "paths": {
-      "@components": [
-        "src/components"
+      "@": [
+        "lib"
       ],
-      "@components/*": [
-        "src/components/*"
+      "@/*": [
+        "lib/*"
       ]
     }
   }

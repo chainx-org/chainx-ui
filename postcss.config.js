@@ -1,4 +1,3 @@
-const tailwindcss = require("tailwindcss");
 const purgecss = require("@fullhuman/postcss-purgecss");
 
 /**
@@ -13,13 +12,12 @@ class TailwindExtractor {
 
 module.exports = {
   plugins: [
-    tailwindcss("./tailwind.config.js"),
     require("autoprefixer"),
     require("cssnano")({ preset: "default" }),
     process.env.NODE_ENV === "production" &&
     purgecss({
-      content: ["**/*.html", "./src/**/*.ts",  "./src/*.ts", "./src/*.tsx", "./src/**/*.tsx"],
-      css: ["./src/**/*.css"],
+      content: ["**/*.html", "./lib/**/*.ts",  "./lib/*.ts", "./lib/*.tsx", "./lib/**/*.tsx"],
+      css: ["./lib/**/*.css"],
       extractors: [
         {
           extractor: new TailwindExtractor,

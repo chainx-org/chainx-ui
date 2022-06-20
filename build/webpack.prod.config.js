@@ -8,32 +8,24 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin')
 module.exports = merge(baseConfig, {
   mode: 'production',
   devtool: false,
-  cache: {
-    type: 'filesystem',
-    buildDependencies: {
-      config: [__filename],
+  // cache: {
+  //   type: 'filesystem',
+  //   buildDependencies: {
+  //     config: [__filename],
+  //   },
+  // },
+  externals: {
+    react: {
+      commonjs: "react",
+      commonjs2: "react",
+      amd: "react",
+      root: "React",
     },
-  },
-  plugins: [
-    ...baseConfig.plugins,
-    new CompressionWebpackPlugin({
-      algorithm: 'gzip',
-      test: new RegExp('\\.(js|css)$'),
-      minRatio: 0.8,
-      deleteOriginalAssets: false,
-    }),
-    //分析打包后每个包的大小
-    // new BundleAnalyzerPlugin(),
-  ],
-  performance: {
-    hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000,
-  },
-  optimization: {
-    splitChunks: {
-      minSize: 10000,
-      maxSize: 250000,
+    "react-dom": {
+      commonjs: "react-dom",
+      commonjs2: "react-dom",
+      amd: "react-dom",
+      root: "ReactDOM",
     },
-  },
+  }
 })

@@ -17,6 +17,8 @@ interface ButtonProps extends AntdButtonProps {
   $disabledBackgroundColor?: string
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, ...rest }: ButtonProps) => {
+const Button: React.FC<ButtonProps> = ({ children, ...rest }: ButtonProps) => {
   return <ButtonWrapper {...rest}>{children}</ButtonWrapper>
 }
+
+export default Button

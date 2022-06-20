@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { Icon } from '@components'
-import IconSearch from '@components/Icon/search.svg'
+import { Icon } from '../../index'
+import IconSearch from '../search.svg'
 
 describe('Icon Component', () => {
   it('render', () => {

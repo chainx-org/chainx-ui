@@ -29,7 +29,7 @@ export default ({
 
   return {
     base: './', // index.html文件所在位置
-    root: './', // js导入的资源路径，src
+    root: './', // js导入的资源路径，lib
     resolve: {
       alias,
     },

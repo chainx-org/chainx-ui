@@ -14,6 +14,7 @@
       "libraryDirectory": "es",
       "style": "css"
     }],
-    ["react-refresh/babel"]
+    ["react-refresh/babel"],
+    ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
   ]
 }
