@@ -1,9 +1,9 @@
 module.exports = {
   roots: ['<rootDir>/lib'],
   testMatch: [
-    '<rootDir>/lib/**/__tests__/**/*.{spec,test}.{js,jsx,ts,tsx}',
-    '<rootDir>/lib/**/*.{spec,test}.{js,jsx,ts,tsx}',
-    '<rootDir>/__test__/**/*.{spec,test}.{js,jsx,ts,tsx}',
+    '<rootDir>/lib/components/**/__test__/**/*.{spec,test}.{js,jsx,ts,tsx}',
+    // '<rootDir>/lib/**/*.{spec,test}.{js,jsx,ts,tsx}',
+    // '<rootDir>/__test__/**/*.{spec,test}.{js,jsx,ts,tsx}',
   ],
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': ["@swc/jest"],
@@ -12,7 +12,7 @@ module.exports = {
   moduleNameMapper: {
     '^.+\\.module\\.(css|sass|scss|less)$': 'identity-obj-proxy',
     // '\\.svg$': 'identity-obj-proxy',
-    '@': '<rootDir>/lib',
+    '@': '<rootDir>/lib/components',
     '^.+\\.(css|style|less|sass|scss|png|jpg|ttf|woff|woff2|svg)$': 'jest-transform-stub'
   },
   transformIgnorePatterns: [

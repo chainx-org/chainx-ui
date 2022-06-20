@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import { Button } from '@'
+import Button from '../index'
 
 describe('Button Component', () => {
   it('render', async () => {
