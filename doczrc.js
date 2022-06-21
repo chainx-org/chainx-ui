@@ -1,5 +1,5 @@
 export default {
   typescript: true,
-  title: 'UI-Components',
+  title: 'Chainx-UI',
   files: './lib/**/*.mdx',
 }
