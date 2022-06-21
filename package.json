@@ -1,6 +1,6 @@
 {
-  "name": "wbh-ui-components",
-  "version": "0.0.9",
+  "name": "chainx-ui-components",
+  "version": "0.0.1",
   "main": "dist/lib/index.js",
   "typings": "dist/lib/index.d.ts",
   "files": [
@@ -109,7 +109,8 @@
     "antd": "^4.16.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "rebass": "^4.0.7"
+    "rebass": "^4.0.7",
+    "@types/rebass": "^4.0.10"
   },
   "resolutions": {
     "remark-mdx": "1.6.22"
@@ -120,7 +121,6 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "_id": "webpack-demo-2@1.0.0",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-customizable"
@@ -128,5 +128,11 @@
   },
   "engines": {
     "node": ">=16.0.0"
-  }
+  },
+  "description": "use wp2vite, change webpack config into vite config. Package includes react, TypeScript, Mobx(simple use). Package use Eslint && pretteir. Support Tailwind Css.",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [],
+  "author": ""
 }
