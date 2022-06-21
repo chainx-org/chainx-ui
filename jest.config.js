@@ -1,7 +1,7 @@
 module.exports = {
   roots: ['<rootDir>/lib'],
   testMatch: [
-    '<rootDir>/lib/components/**/__test__/*.{spec,test}.{js,jsx,ts,tsx}',
+    '<rootDir>/lib/**/__test__/*.{spec,test}.{js,jsx,ts,tsx}',
 // '<rootDir>/lib/**/*.{spec,test}.{js,jsx,ts,tsx}',
     // '<rootDir>/__test__/**/*.{spec,test}.{js,jsx,ts,tsx}',
   ],
