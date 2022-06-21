@@ -8,12 +8,6 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin')
 module.exports = merge(baseConfig, {
   mode: 'production',
   devtool: false,
-  // cache: {
-  //   type: 'filesystem',
-  //   buildDependencies: {
-  //     config: [__filename],
-  //   },
-  // },
   externals: {
     react: {
       commonjs: "react",

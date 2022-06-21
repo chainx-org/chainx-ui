@@ -92,12 +92,8 @@
     "wp2vite": "^2.0.8"
   },
   "scripts": {
-    "start": "cross-env API_ENV=dev webpack serve --config build/webpack.dev.config.js --open",
     "build": "cross-env API_ENV=prod npx webpack --config build/webpack.prod.config.js",
-    "pre": "cross-env API_ENV=pre npx webpack --config build/webpack.prod.config.js",
     "lint": "eslint lib build --fix --ext .ts,.tsx,.js ",
-    "vite-dev": "vite",
-    "vite": "concurrently \"yarn watch:css \" \"yarn vite-dev \"",
     "docz:dev": "docz dev --port 6001",
     "docz:build": "docz build",
     "docz:serve": "docz build && docz serve",
