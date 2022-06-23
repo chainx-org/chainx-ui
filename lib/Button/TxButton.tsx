@@ -17,7 +17,7 @@ export const isComingWallet = (): boolean => {
 interface TxButtonProps extends ButtonProps {
   address: string
   extrinsics: string
-  params: any[]
+  params: (string | number)[]
   polkadotApiProvider: any
   getInjector: () => Promise<any>
   chainName?: string
