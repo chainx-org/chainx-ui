@@ -1,5 +1,15 @@
 module.exports = {
   roots: ['<rootDir>/lib'],
+  collectCoverage: true,
+  collectCoverageFrom: ["lib/**/**.{ts,tsx}", "!lib/*.{ts,tsx}", "!lib/Button/TxButton.tsx", "!**/node_modules/**"],
+  coverageThreshold: {
+    "global": {
+      "branches": 90,
+      "functions": 90,
+      "lines": 90,
+      "statements": 90
+    }
+  },
   testMatch: [
     '<rootDir>/lib/**/__test__/*.{spec,test}.{js,jsx,ts,tsx}',
 // '<rootDir>/lib/**/*.{spec,test}.{js,jsx,ts,tsx}',
