@@ -2,7 +2,7 @@ import React from 'react'
 import { ButtonWrapper } from './styles'
 import { ButtonProps as AntdButtonProps } from 'antd'
 
-interface ButtonProps extends AntdButtonProps {
+export interface ButtonProps extends AntdButtonProps {
   children: React.ReactNode
   border?: string
   $backgroundColor?: string
