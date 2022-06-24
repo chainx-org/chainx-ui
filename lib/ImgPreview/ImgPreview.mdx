@@ -1,0 +1,24 @@
+---
+name: ImgPreview
+menu: Components
+route: /imgpreview
+---
+
+import { ImgPreview } from "./index";
+import { Playground, Props } from "docz";
+
+# TxButton
+<Playground>
+  <ImgPreview
+    acceptSize={1}
+    acceptType={['image/png']}
+    defaultLabel={'JPG, PNG, GIF. Recommended size:800X502. Max Size：1MB'}
+    uploadCardStyle={{
+      border: '3px dashed #cccccc',
+    }}
+  />
+</Playground>
+
+## Props
+
+<Props of={ImgPreview}/>
