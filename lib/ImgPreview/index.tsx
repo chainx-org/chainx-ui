@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from 'react'
-import { Icon } from '@'
-import IconRemove from './icon_remove.svg'
-import { ImgPreviewWrapper, PreviewWrapper, UploadWrapper } from '@/ImgPreview/styles'
+import { Icon } from '@components'
+import IconRemove from '@components/ImgPreview/icon_remove.svg'
+import { ImgPreviewWrapper, PreviewWrapper, UploadWrapper } from './styles'
 
 export type CardStyle = {
-  width?: number
-  height?: number
+  width?: string
+  height?: string
   borderRadius?: string
   border?: string
   padding?: string
@@ -30,11 +30,14 @@ interface ImgPreviewProps {
   previewCardStyle?: CardStyle
   previewLabelStyle?: LabelStyle
   closeIcon?: React.ReactNode
+  className?: string
+  uploadClassName?: string
+  previewClassName?: string
 }
 
 const DEFAULT_CARD_STYLE: CardStyle = {
-  width: 480,
-  height: 300,
+  width: '480px',
+  height: '300px',
   borderRadius: '10px',
 }
 
@@ -46,7 +49,7 @@ const DEFAULT_LABEL_STYLE: LabelStyle = {
   textAlign: 'center',
 }
 
-const ImgPreview: React.FC<ImgPreviewProps> = ({
+export const ImgPreview: React.FC<ImgPreviewProps> = ({
   acceptType,
   acceptSize,
   defaultLabel,
@@ -55,9 +58,11 @@ const ImgPreview: React.FC<ImgPreviewProps> = ({
   uploadLabelStyle,
   previewCardStyle,
   previewLabelStyle,
+  className = '',
+  uploadClassName = '',
+  previewClassName = '',
 }: ImgPreviewProps) => {
   const [uploadImg, setUploadImg] = useState<string>('')
-
   const handleUpload = useCallback(() => {
     document.getElementById('input-image').click()
   }, [])
@@ -87,8 +92,9 @@ const ImgPreview: React.FC<ImgPreviewProps> = ({
   }, [])
 
   return (
-    <ImgPreviewWrapper>
+    <ImgPreviewWrapper data-testid={'wrapper'} className={className}>
       <UploadWrapper
+        data-testid={'upload-wrapper'}
         uploadCardStyle={{
           ...DEFAULT_CARD_STYLE,
           ...uploadCardStyle,
@@ -97,12 +103,14 @@ const ImgPreview: React.FC<ImgPreviewProps> = ({
           ...DEFAULT_LABEL_STYLE,
           ...uploadLabelStyle,
         }}
-        onClick={handleUpload}>
+        onClick={handleUpload}
+        className={uploadClassName}>
         <input
+          data-testid={'upload-input'}
           onChange={onChange}
           id="input-image"
           name="media"
-          accept="image/jpeg,image/jpg,image/png,image/gif"
+          accept={acceptType.join(',')}
           type="file"
           style={{ display: 'none' }}
         />
@@ -116,11 +124,15 @@ const ImgPreview: React.FC<ImgPreviewProps> = ({
             )}
           </div>
         ) : (
-          <p className="upload-label">{defaultLabel}</p>
+          <p data-testid={'upload-label'} className="upload-label">
+            {defaultLabel}
+          </p>
         )}
       </UploadWrapper>
 
       <PreviewWrapper
+        data-testid={'preview-wrapper'}
+        className={previewClassName}
         previewCardStyle={{
           ...DEFAULT_CARD_STYLE,
           ...previewCardStyle,
@@ -130,13 +142,13 @@ const ImgPreview: React.FC<ImgPreviewProps> = ({
           ...previewLabelStyle,
         }}>
         {uploadImg ? (
-          <img className="preview-image" alt="nft-card" src={uploadImg} />
+          <img data-testid={'preview-image'} className="preview-image" alt="nft-card" src={uploadImg} />
         ) : (
-          <p className="preview-label">Upload file to preview your brand new NFT</p>
+          <p data-testid={'preview-label'} className="preview-label">
+            Upload file to preview your brand new NFT
+          </p>
         )}
       </PreviewWrapper>
     </ImgPreviewWrapper>
   )
 }
-
-export { ImgPreview }

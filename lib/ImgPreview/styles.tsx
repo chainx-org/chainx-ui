@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { CardStyle, LabelStyle } from '@/ImgPreview/index'
+import { CardStyle, LabelStyle } from '@components/ImgPreview'
 
 export const UploadWrapper = styled.div<{
   uploadCardStyle: CardStyle
@@ -9,8 +9,8 @@ export const UploadWrapper = styled.div<{
   cursor: pointer;
   border: ${({ uploadCardStyle: { border } }) => border && border};
   border-radius: ${({ uploadCardStyle: { borderRadius } }) => borderRadius};
-  width: ${({ uploadCardStyle: { width } }) => `${width}px`};
-  height: ${({ uploadCardStyle: { height } }) => `${height}px`};
+  width: ${({ uploadCardStyle: { width } }) => width};
+  height: ${({ uploadCardStyle: { height } }) => height};
   padding: ${({ uploadCardStyle: { padding } }) => padding};
   margin: ${({ uploadCardStyle: { margin } }) => margin};
   overflow: hidden;
@@ -51,17 +51,17 @@ export const PreviewWrapper = styled.div<{
   justify-content: center;
 
   .preview-image {
-    width: ${({ previewCardStyle: { width } }) => `${width}px`};
-    height: ${({ previewCardStyle: { height } }) => `${height}px`};
+    width: ${({ previewCardStyle: { width } }) => width};
+    height: ${({ previewCardStyle: { height } }) => height};
   }
 
   .preview-label {
-    width: ${({ previewCardStyle: { width } }) => `${width}px`};
+    width: ${({ previewCardStyle: { width } }) => width};
     font-size: ${({ previewLabelStyle: { fontSize } }) => `${fontSize}px`};
     font-weight: ${({ previewLabelStyle: { fontWeight } }) => fontWeight};
     color: ${({ previewLabelStyle: { color } }) => color};
     line-height: ${({ previewLabelStyle: { lineHeight } }) => lineHeight};
-    text-align: ${({ previewLabelStyle: { textAlign } }) => textAlign };
+    text-align: ${({ previewLabelStyle: { textAlign } }) => textAlign};
   }
 `
 

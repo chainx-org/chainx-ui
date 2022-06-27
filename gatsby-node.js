@@ -4,7 +4,7 @@ exports.onCreateWebpackConfig = args => {
   args.actions.setWebpackConfig({
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '../lib'),
+        '@components': path.resolve(__dirname, '../lib'),
       },
     },
   })

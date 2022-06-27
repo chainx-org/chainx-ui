@@ -27,10 +27,10 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "paths": {
-      "@": [
+      "@components": [
         "lib/"
       ],
-      "@/*": [
+      "@components/*": [
         "lib/*"
       ]
     }
