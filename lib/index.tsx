@@ -1,5 +1,7 @@
+import 'antd/dist/antd.css'
 export { Button } from './Button'
 export { TxButton } from './Button/TxButton'
 export { Icon } from './Icon'
 export { ImgPreview } from './ImgPreview'
 export { Card } from './Card'
+export { Popup } from './Popup'

@@ -37,7 +37,7 @@ module.exports = {
           'babel-loader',
           'ts-loader'
         ],
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
       },
       {
         test: /\.(s[ac]ss|css)$/i,
@@ -64,7 +64,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      '@': path.resolve(rootDir, 'lib')
+      '@components': path.resolve(rootDir, 'lib')
     },
   },
   plugins: [

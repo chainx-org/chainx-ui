@@ -1,0 +1,29 @@
+---
+name: Popup
+menu: Components
+route: /popup
+---
+
+import { Playground, Props } from 'docz'
+import { Popup } from "./index.tsx";
+
+# Popup
+
+## Basic usage
+
+<Playground>
+    <Popup
+      $backgroundColor={'black'}
+      color={'white'}
+      $borderRadius={'10px'}
+      placement="top"
+      $maxWidth={'200px'}
+      triggerEvent="click" content={'this is popup,this is popup,this is popup,this is popup,this is popup,this is popup'}>
+        <div>popup</div>
+    </Popup>
+</Playground>
+
+
+## Props
+
+<Props of={Popup} />

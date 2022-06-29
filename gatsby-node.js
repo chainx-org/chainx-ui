@@ -6,6 +6,6 @@ exports.onCreateWebpackConfig = args => {
       alias: {
         '@components': path.resolve(__dirname, '../lib'),
       },
-    },
+    }
   })
 }
