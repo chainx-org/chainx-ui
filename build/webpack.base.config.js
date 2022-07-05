@@ -6,7 +6,7 @@ const WebpackBar = require('webpackbar')
 
 module.exports = {
   entry: {
-    index: './lib/index.tsx', //入口是 index.tsx
+    index: './lib/EvmAvatar.tsx', //入口是 EvmAvatar.tsx
   },
   //   {
   //   index: {
@@ -14,8 +14,8 @@ module.exports = {
   //     filename: 'index.js',
   //     // dependOn: ['Button', 'Icon'],
   //   },
-    // Button: path.resolve(rootDir, 'lib/Button/index.tsx'),
-    // Icon: './lib/Icon/index.tsx'
+    // Button: path.resolve(rootDir, 'lib/Button/EvmAvatar.tsx'),
+    // Icon: './lib/Icon/EvmAvatar.tsx'
   // },
   devtool: 'inline-source-map',
   output: {
