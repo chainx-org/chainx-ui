@@ -5,7 +5,7 @@ import { PopupWrapper } from './styles'
 interface Props extends PopoverProps {
   children: React.ReactNode
   triggerEvent: string
-  content: string
+  content: React.ReactNode
   visible?: boolean
   setVisible?: React.Dispatch<boolean>
   $backgroundColor?: string

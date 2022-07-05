@@ -23,7 +23,8 @@ module.exports = {
     '^.+\\.module\\.(css|sass|scss|less)$': 'identity-obj-proxy',
 // '\\.svg$': 'identity-obj-proxy',
     '@components': '<rootDir>/lib',
-    '^.+\\.(css|style|less|sass|scss|png|jpg|ttf|woff|woff2|svg)$': 'jest-transform-stub'
+    '^.+\\.(style|png|jpg|ttf|woff|woff2|svg)$': 'jest-transform-stub',
+    "\\.(css|less)$": "identity-obj-proxy",
   },
   transformIgnorePatterns: [
     '[/\\\\]node_modules/(?!(antd)/)[/\\\\].+\\.(js|jsx|ts|tsx)$',
