@@ -1,7 +1,7 @@
 import React from 'react'
 import { SkeletonAvatar } from '../SkeletonAvatar'
 import { SkeletonParagraph } from '../SkeletonParagraph'
-import { cleanup, render } from "@testing-library/react";
+import { cleanup, render } from '@testing-library/react'
 
 describe('Popup Component', () => {
   afterEach(cleanup)

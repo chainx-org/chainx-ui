@@ -10,4 +10,4 @@ const EvmAvatar: React.FC<Props> = ({ address, size }: Props) => {
   return <Jazzicon diameter={size} seed={jsNumberForAddress(address)} />
 }
 
-export default EvmAvatar
+export { EvmAvatar }
