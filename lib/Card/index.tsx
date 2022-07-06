@@ -8,9 +8,9 @@ interface Props extends CardProps {
   height?: string
   margin?: string
   border?: string
-  borderRadius?: string
+  $borderRadius?: string
   color?: string
-  backgroundColor?: string
+  $backgroundColor?: string
   children: React.ReactNode
   className?: string
 }
@@ -21,9 +21,9 @@ const Card: React.FC<Props> = ({
   height,
   margin,
   border,
-  borderRadius,
+  $borderRadius,
   color,
-  backgroundColor,
+  $backgroundColor,
   children,
   className = '',
   ...rest
@@ -37,9 +37,9 @@ const Card: React.FC<Props> = ({
       width={width}
       height={height}
       border={border}
-      borderRadius={borderRadius}
+      $borderRadius={$borderRadius}
       color={color}
-      backgroundColor={backgroundColor}
+      $backgroundColor={$backgroundColor}
       {...rest}>
       {children}
     </CardWrapper>

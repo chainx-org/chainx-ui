@@ -21,8 +21,8 @@ describe('Icon Component', () => {
         padding={'12px 14px'}
         margin={'0 5px'}
         border={'none'}
-        borderRadius={'12px'}
-        backgroundColor={'#cccccc'}
+        $borderRadius={'12px'}
+        $backgroundColor={'#cccccc'}
         color={'black'}>
         hello, this is card
       </Card>,

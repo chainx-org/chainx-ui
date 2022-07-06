@@ -7,16 +7,16 @@ export const CardWrapper = styled(Card)<{
   height?: string
   margin?: string
   border?: string
-  borderRadius?: string
+  $borderRadius?: string
   color?: string
-  backgroundColor?: string
+  $backgroundColor?: string
 }>`
   border: ${({ border }) => border && border};
   padding: ${({ padding }) => padding && padding};
   margin: ${({ margin }) => margin && margin};
-  border-radius: ${({ borderRadius }) => borderRadius && borderRadius};
+  border-radius: ${({ $borderRadius }) => $borderRadius && $borderRadius};
   color: ${({ color }) => color && color};
   width: ${({ width }) => width && width};
   height: ${({ height }) => height && height};
-  background-color: ${({ backgroundColor }) => backgroundColor && backgroundColor};
+  background-color: ${({ $backgroundColor }) => $backgroundColor && $backgroundColor};
 `
