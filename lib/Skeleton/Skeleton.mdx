@@ -1,0 +1,27 @@
+---
+name: Skeleton
+menu: Components
+route: /skeleton
+---
+
+import { Playground, Props } from 'docz'
+import { SkeletonParagraph } from "./SkeletonParagraph";
+import { SkeletonAvatar } from "./SkeletonAvatar";
+
+# Skeleton
+
+## Basic usage
+
+<Playground>
+  <SkeletonAvatar size={24} />
+  <SkeletonParagraph width={'113px'} height={'28px'} borderRadius={'14px'} />
+</Playground>
+
+
+## SkeletonParagraph Props
+
+<Props of={SkeletonParagraph} />
+
+## SkeletonAvatar Props
+
+<Props of={SkeletonAvatar} />
